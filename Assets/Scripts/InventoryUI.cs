@@ -12,9 +12,9 @@ public class InventoryUI : MonoBehaviour
     {
         coinText = GetComponent<TextMeshProUGUI>();
     }
-    
-public void UpdateCoinText(PlayerInventory playerInventory)
+
+    public void UpdateCoinText(PlayerInventory playerInventory)
     {
-    coinText.text= "" + playerInventory.NumberofCoins.ToString();
+        coinText.text = "" + playerInventory.NumberofCoins.ToString();
     }
 }
