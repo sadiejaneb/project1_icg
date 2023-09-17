@@ -5,14 +5,24 @@ using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
-   public int NumberofCoins { get; private set;}
+     public int totalNumberOfCoins;
+     public int NumberOfCoins { get; private set; }
+     public UnityEvent<PlayerInventory> OnCoinCollected;
+     public UnityEvent OnAllCoinsCollected;
 
-   public UnityEvent<PlayerInventory> OnCoinCollected;
+     private void Start()
+     {
+          // Initialize the total number of coins at the beginning
+          totalNumberOfCoins = GameObject.FindGameObjectsWithTag("Coin").Length;
+     }
 
-    public void AddCoins()
-    {
-         NumberofCoins++;
-         OnCoinCollected.Invoke(this);
-    }
-
+     public void AddCoins()
+     {
+          NumberOfCoins++;
+          OnCoinCollected.Invoke(this);
+          if (NumberOfCoins >= totalNumberOfCoins)
+          {
+               OnAllCoinsCollected.Invoke();
+          }
+     }
 }

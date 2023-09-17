@@ -11,10 +11,12 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         coinText = GetComponent<TextMeshProUGUI>();
+        PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
+        playerInventory.OnAllCoinsCollected.AddListener(() => FindObjectOfType<GameManager>().WinGame());
     }
 
     public void UpdateCoinText(PlayerInventory playerInventory)
     {
-        coinText.text = "" + playerInventory.NumberofCoins.ToString();
+        coinText.text = "" + playerInventory.NumberOfCoins.ToString();
     }
 }
