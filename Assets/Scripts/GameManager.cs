@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     public void LoseLife()
     {
         lives--;
-        livesCounterText.text = "" + lives.ToString();  
+        livesCounterText.text = "" + lives.ToString();
 
         if (lives <= 0)
         {
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("You Win!");
 
         // Add a slight delay before quitting
-        Invoke("QuitGame", 5f); // 5 seconds delay
+        Invoke("QuitGame", 4f); // 5 seconds delay
     }
 
     void QuitGame()

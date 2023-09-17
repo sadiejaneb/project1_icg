@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
+    public bool rotate;
+
+    public float rotationSpeed;
+    void Update()
+    {
+
+        if (rotate)
+            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
+
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
