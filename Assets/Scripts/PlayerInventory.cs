@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,10 +17,12 @@ public class PlayerInventory : MonoBehaviour
      public void AddCoins()
      {
           NumberOfCoins++;
+          Debug.Log("Coins collected: " + NumberOfCoins);
           OnCoinCollected.Invoke(this);
           if (NumberOfCoins >= totalNumberOfCoins)
           {
                OnAllCoinsCollected.Invoke();
           }
      }
+     
 }
