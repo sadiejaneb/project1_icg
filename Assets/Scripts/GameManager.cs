@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("You Win!");
 
         // Add a slight delay before quitting
-        Invoke("QuitGame", 4f); // 5 seconds delay
+        Invoke("QuitGame", 4f); // 4 seconds delay
     }
 
     void QuitGame()
