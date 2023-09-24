@@ -2,7 +2,7 @@
 
 Small starter project for learning Unity controls and collision.  The player will collect 6 coins throughout the game world and win if all 6 are collected without losing all 3 lives.  If the player touches a red obstacle they will die, restart the level, and lose 1 life.  When all 3 lives are lost, the game is over. 
 
-![Screenshot](screenshot.png)
+![Screenshot](images/screeenshot.png)
 
 ## Getting Started
 
